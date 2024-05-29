@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>my Gallery
+        image gallery
+    </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        nav {
+            text-align: center;
+        }
+        nav ul {
+            padding: 0;
+            list-style: none;
+        }
+        nav li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        @media (max-width: 600px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #f4f4f4;
+                z-index: 1000;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            nav li {
+                margin: 10px 0;
+                display: block;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+
+        /* Image Gallery */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .gallery img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Image Slideshow */
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin-top: 20px;
+        }
+        .mySlides {
+            display: none;
+        }
+        .slideshow-container img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to image gallery</h1>
+        <button id="colorButton" onclick="changeColor()">Click Me</button>
+        
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                &#9776; Menu
+            </div>
+        </nav>
+
+        <div class="gallery">
+            <div class="slideshow">
+            <img src="h12.jpg" onclick="openModal('h12.jpg')" alt="h12"class="slide">
+            <img src="h13.jpg" onclick="openModal('image2.jpg')" alt="Image 2"class="slide">
+            <img src="h14.jpg" onclick="openModal('image3.jpg')" alt="Image 3"class="slide">
+            <img src="h15.jpg" onclick="openModal('image1.jpg')" alt="Image 1"class="slide">
+            <img src="h16.jpg" onclick="openModal('image2.jpg')" alt="Image 2"class="slide">
+            <img src="h17.jpg" onclick="openModal('image3.jpg')" alt="Image 3"class="slide">
+            <img src="h18.jpg" onclick="openModal('image1.jpg')" alt="Image 1"class="slide">
+            <img src="h19.jpg" onclick="openModal('image2.jpg')" alt="Image 2"class="slide">
+            <img src="h20.png" onclick="openModal('image3.jpg')" alt="Image 3"class="slide">
+            <img src="h22.jpg" onclick="openModal('image1.jpg')" alt="Image 1"class="slide">
+            <img src="h23.jpg" onclick="openModal('image2.jpg')" alt="Image 2"class="slide">
+            <img src="h24.jpg" onclick="openModal('image3.jpg')" alt="Image 3"class="slide">
+      
+      
+        </div>
+
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="h12.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="h13.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="h14.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="h15.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="h16.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="h17.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="h18.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="h19.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="h20.png" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="h22.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="h23.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="h24.jpg" style="width:100%">
+            </div>
+            
+        </div>
+        <script src="scripts.js"></script>
+        
+    </div>
+
+    <script>
+   
+function changeColor() {
+            var button = document.getElementById('colorButton');
+            if (button.style.backgroundColor === 'red') {
+                button.style.backgroundColor = '#007bff';
+            } else {
+                button.style.backgroundColor = 'red';
+            }
+        }
+
+        function toggleMenu() {
+            var navUl = document.querySelector('nav ul');
+            navUl.classList.toggle('active');
+        }
+
+        var currentTime = new Date();
+        var currentHour = currentTime.getHours();
+        var greeting;
+
+        if (currentHour < 12) {
+            greeting = "Good morning!";
+        } else if (currentHour < 18) {
+            greeting = "Good afternoon!";
+        } else {
+            greeting = "Good evening!";
+        }
+
+        alert(greeting);
+
+        // Image Gallery
+        function openModal(imageName) {
+            // Open modal with larger image
+            console.log("Opening modal for " + imageName);
+        }
+
+        // Image Slideshow
+        var slideIndex = 0;
+
+        function showSlides() {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}
+          slides[slideIndex-1].style.display = "block";
+          setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+
+        showSlides();
+    </script>
+</body>
+</html>
+
+////////////*style.css*/////////
+.slideshow {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  
+  .slide {
+    display: none;
+    width: 100%;
+  }
+  
+  ////////////////*JAVASCRIPT*//////////
+  let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlide(n) {
+  if (n < 0) {
+    currentSlide = slides.length - 1;
+  } else if (n >= slides.length) {
+    currentSlide = 0;
+  } else {
+    currentSlide = n;
+  }
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';
+  }
+
+  slides[currentSlide].style.display = 'block';
+}
+
+function nextSlide() {
+  showSlide(currentSlide + 1);
+}
+
+setInterval(nextSlide, 3000); // Change slide every 3 seconds
+showSlide(currentSlide);
+
+  
+I
