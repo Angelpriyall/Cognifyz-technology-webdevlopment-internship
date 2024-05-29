@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Navigation Menu</title>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            overflow: hidden;
+        }
+        li {
+            float: left;
+        }
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover {
+            background-color: #111;
+        }
+    </style>
+</head>
+<body>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+</ul>
+  <div class="container">
+    <h1> welcome to my simple web development page</h1>
+    <img src="wp.png" alt="luxrious life waiting after learning web development ">
+    <p>
+     <p><a href="Web development" >Web development</a></p>
+    <p> "web is like solving puzzles every day. It challenges your problem-solving
+       skills and keeps your mind sharp." </p>
+
+  <p>"Learning web development is not  just about gaining technical skills; it's 
+    about continuously adapting to new technologies and staying ahead in a rapidly
+     evolving industry." 
+      "Web development is a gateway to endless possibilities. It empowers you to 
+      turn your ideas into reality and make a meaningful impact in the digital 
+      landscape." -
+    </p>
+      
+      Don't miss out on the chance to shape the future of the internet! Enroll
+       in our comprehensive web development program today and unlock your potential.
+    </p>
+    <div class="container">
+      <h1>Basic Form</h1>
+      <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="successMessage" class="hidden">
+        <p>Thank you for submitting the form, <span id="submittedName"></span>!</p>
+      </div>
+    
+  <script src="script.js"></script>
+  </div>
+</body>
+</html>
+
+*****css file*****
+.container {
+    max-width: 80px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 50%;
+    height: auto;
+  }
+  
+  p {
+    text-align: justify;
+  }
+
+****javascript****
+document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    var name = document.getElementById("name").value;
+    
+    document.getElementById("submittedName").innerText = name;
+    
+    document.getElementById("myForm").reset();
+    
+    document.getElementById("successMessage").classList.remove("hidden");
+  });
