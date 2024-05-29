@@ -1,0 +1,185 @@
+///////*basic button changes the colour*///////
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changing Button</title>
+    <style>
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <button id="colorButton" onclick="changeColor()">Click Me to Change Color!</button>
+
+    <script>
+        function changeColor() {
+            const button = document.getElementById('colorButton');
+            const randomColor = Math.floor(Math.random()*16777215).toString(16);
+            button.style.backgroundColor = '#' + randomColor;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+///*alert box*//
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Message</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .alert-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="showGreeting()">Show Greeting</button>
+
+    <div class="alert-box" id="alertBox">
+        <h2>Greeting Message</h2>
+        <p id="greetingMessage"></p>
+        <button onclick="hideGreeting()">Close</button>
+    </div>
+
+    <script>
+        function showGreeting() {
+            const currentTime = new Date().getHours();
+            let greetingMessage;
+
+            if (currentTime < 6) {
+                greetingMessage = "Good morning!";
+            } else if (currentTime < 12) {
+                greetingMessage = "Good afternoon!";
+            } else {
+                greetingMessage = "Good evening!";
+            }
+
+            document.getElementById('greetingMessage').innerText = greetingMessage;
+            document.getElementById('alertBox').style.display = 'block';
+        }
+
+        function hideGreeting() {
+            document.getElementById('alertBox').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+
+////////*simple calculator*//////
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .calculator {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        button {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            font-size: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 10px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="result" readonly>
+        <br>
+        <button onclick="clearResult()" style="background-color: #ff6347;">C</button>
+        <button onclick="appendToResult('7')">7</button>
+        <button onclick="appendToResult('8')">8</button>
+        <button onclick="appendToResult('9')">9</button>
+        <br>
+        <button onclick="appendToResult('4')">4</button>
+        <button onclick="appendToResult('5')">5</button>
+        <button onclick="appendToResult('6')">6</button>
+        <button onclick="appendToResult('+')" style="background-color: #87ceeb;">+</button>
+        <br>
+        <button onclick="appendToResult('1')">1</button>
+        <button onclick="appendToResult('2')">2</button>
+        <button onclick="appendToResult('3')">3</button>
+        <button onclick="appendToResult('-')" style="background-color: #87ceeb;">-</button>
+        <br>
+        <button onclick="calculateResult()" style="background-color: #32cd32;">=</button>
+    </div>
+
+    <script>
+        function clearResult() {
+            document.getElementById('result').value = '';
+        }
+
+        function appendToResult(value) {
+            document.getElementById('result').value += value;
+        }
+
+        function calculateResult() {
+            const result = eval(document.getElementById('result').value);
+            document.getElementById('result').value = result;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
