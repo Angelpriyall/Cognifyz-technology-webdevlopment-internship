@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Developer Internship at Cognifyz Technologies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        p {
+            text-align: justify;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .cta-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Web Developer Internship Opportunities at Cognifyz Technologies</h1>
+        
+        <p><span class="highlight">Overview:</span> 
+            <div>Cognifyz Technologies is a leading technology company that
+                specializes in the dynamic field of data science and excels in
+                delivering impactful projects and solutions.
+                The company offers a wide range of products and services,
+                including artificial intelligence (AI), machine learning (ML), and
+                data analytics tools.
+                Cognifyz Technologies also provides training programs to
+                enhance skills and knowledge in these areas.
+                The company focuses on delivering innovative and cutting-edge
+                solutions to meet the evolving needs of businesses</div>
+
+
+                Join our internship program to gain hands-on experience in 
+                web development. The internship duration is 3 and 1 months.</p>
+        
+        <p><span class="highlight">Highlights:</span> Participants will work on real-world projects, receive mentorship from industry experts, and have the opportunity to showcase their skills.</p>
+        
+        <p><span class="highlight">Qualifications:</span> We are looking for candidates proficient in HTML, CSS, JavaScript, and familiarity with frameworks like React or Angular.</p>
+
+        <a href="https://cognifyz.com/glow_portfolio/web-development/"  class="cta-button">Apply Now</a>
+    </div>
+
+    <div class="footer">
+        <p>visit official website <a href="https://cognifyz.com/">info@cognifyztech.com
+         
+            <p>If you have any questions or feedback, feel free to contact us at <a href="mailto:.com">cognifyztechnologies@gmail.com</a>.</p>
+           
+        </a> 
+            
+          for inquiries about the internship program.</p>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <button type="submit">Submit</button>
+        </form>
+    
+        <div id="response"></div>
+    
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>
+///////***javascript file***////
+const form = document.getElementById('contact-form');
+const responseDiv = document.getElementById('response');
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+
+    // Here you can send the form data to your backend server using AJAX or fetch
+
+    responseDiv.innerHTML = Thank })
